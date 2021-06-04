@@ -78,8 +78,8 @@ for layer in baseModel.layers:
 
 print("[INFO] compiling model...")
 opt = Adam(lr=INIT_LR, decay=INIT_LR / EPOCHS)
-model.compile(loss="Binary Cross Entropy", optimizer=opt,
-              metrics=["Accuracy"])
+model.compile(loss="binary_crossentropy", optimizer=opt,
+              metrics=["accuracy"])
 
 print("[INFO] training head...")
 H = model.fit(
@@ -107,8 +107,8 @@ plt.plot(np.arange(0, N), H.history["loss"], label="train_loss")
 plt.plot(np.arange(0, N), H.history["val_loss"], label="val_loss")
 plt.plot(np.arange(0, N), H.history["accuracy"], label="train_acc")
 plt.plot(np.arange(0, N), H.history["val_accuracy"], label="val_acc")
-plt.title("Loss and Accuracy")
-plt.xlabel("Epoch")
+plt.title("Training Loss and Accuracy")
+plt.xlabel("Epoch #")
 plt.ylabel("Loss/Accuracy")
-plt.legend(loc="Lower Left")
+plt.legend(loc="lower left")
 plt.savefig("finalPlot.png")
