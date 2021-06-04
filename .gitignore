@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 .idea
+install
+venvpip
 
 # C extensions
 *.so
